@@ -14,7 +14,11 @@
 			{
 				$("#connexion").click(function()
 				{
-					Connexion();
+					if ($nom == Girard)
+					$this->load->view("listeRegions")
+					else
+					
+
 				});
 				;
 			}

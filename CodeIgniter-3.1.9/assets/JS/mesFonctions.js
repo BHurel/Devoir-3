@@ -1,9 +1,18 @@
-//function Connexion()
-// {
-//     $.ajax(
-
-//     )
-// }
+function Connexion_Admin()
+{
+    $.ajax
+    (
+        $this->load->model("Model_Regions");
+		$data["regions"] = $this->Model_devoir->getRegions();
+		$this->load->view("listeRegions", $data);
+    )
+}
+function connexion_Invite()
+	{
+		$this->load->model("Model_Regions");
+		$data["regions"] = $this->Model_Regions->getRegionInvite();
+		$this->load->view("listeRegions", $data);
+	}
 function AfficherRegions()
 {
     $.ajax
