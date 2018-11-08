@@ -7,7 +7,7 @@
             return $sql->result();
         }
     }
-    function addVote($tab1, $tab2)
+    function ajouterNote($tab1, $tab2)
     {
         $tab1 = explode(",", $tab1);
         $tab2 = explode(",", $tab2);

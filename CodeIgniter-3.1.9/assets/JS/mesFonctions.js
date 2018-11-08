@@ -1,18 +1,40 @@
+var $data = "";
 function Connexion_Admin()
-{
+{ 
     $.ajax
     (
-        $this->load->model("Model_Regions");
-		$data["regions"] = $this->Model_devoir->getRegions();
-		$this->load->view("listeRegions", $data);
-    )
+        {
+            type:"get",
+            url:"index.php/Welcome/AfficherRegions",
+            success:function($data)
+            {
+		        $data["regions"] = this.getRegions();
+            },    
+            error:function()
+            {
+                alert('Erreur: Afficher les regions')
+            }
+        }
+    )  
 }
 function connexion_Invite()
 	{
-		$this->load->model("Model_Regions");
-		$data["regions"] = $this->Model_Regions->getRegionInvite();
-		$this->load->view("listeRegions", $data);
-	}
+        $.ajax
+    (
+        {
+            type:"get",
+            url:"index.php/Welcome/AfficherRegions",
+            success:function($data)
+            {
+		        $data["regions"] = this.getRegionInvite();
+            },    
+            error:function()
+            {
+                alert('Erreur: Afficher les regions')
+            }
+        }
+    )
+}
 function AfficherRegions()
 {
     $.ajax

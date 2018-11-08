@@ -8,28 +8,33 @@
 	<script src="assets/JS/mesFonctions.js"></script>
 	<script src="assets/JQuery/jquery-3.1.1.js"></script>
 	<script>
-		$
-		(
-			function ()
+		$(
+		function()
+		{
+			$("#connexion").click(function()
 			{
-				$("#connexion").click(function()
+				if ($("#nom").val() == "Royer" || $("#nom").val() == "royer")
 				{
-					if ($nom == Girard)
-					$this->load->view("listeRegions")
-					else
-					
-
-				});
-				;
-			}
-		)
+					Connexion_Invite();
+				}
+				else if ($("#nom").val() == "Girard" || $("#nom").val() == "girard")
+				{
+					Connexion_admin();
+				}
+				else
+				{
+                alert('Erreur: Saisie du nom incorrecte')
+            	}
+			});
+		}
+	)
 	</script>
 </head>
 <body>
 	<h1>Devoir 3: Notation regions</h1><br>
 	<h2> Votre nom </h2>
 	<input type="text" id="Nom" value=""><br><br>
-	<input type="button" id="AfficherRegions" value="Connexion"><br>
+	<input type="button" id="Connexion" value="Connexion"><br>
 	<div id="listeRegions"></div>
 	<div id="listeVilles"></div>
 </body>
