@@ -12,23 +12,21 @@
 		(
 			function()
 			{
-				$("#creeConference").click(function()
+				$("#connexion").click(function()
 				{
-					CreationConference();
+					AfficherRegions();
 				});
-				$('#voterConference').click(function()
-				{
-					VoterConference();
-				});
+				;
 			}
 		)
 	</script>
 </head>
 <body>
-	<h1>Devoir TechDays</h1><br>
-	<input type="button" id="creeConference" value="Créer une conférence"><br>
-	<input type="button" id="voterConference" value="Voter pour une conférence"><br>
-	<div id="creationConference"></div>
-	<div id="listeConference"></div>
+	<h1>Devoir 3: Notation regions</h1><br>
+	<h2> Votre nom </h2>
+	<input type="text" id="Nom" value=""><br><br>
+	<input type="button" id="AfficherRegions" value="Connexion"><br>
+	<div id="listeRegions"></div>
+	<div id="listeVilles"></div>
 </body>
 </html>

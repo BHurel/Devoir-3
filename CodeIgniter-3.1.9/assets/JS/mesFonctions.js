@@ -1,88 +1,53 @@
-function CreationConference()
+function AfficherRegions()
 {
     $.ajax
     (
         {
             type:"get",
-            url:"index.php/Welcome/CreationConference",
+            url:"index.php/Welcome/AfficherRegions",
             success:function(data)
             {
-                $("#listeConference").empty();
-                $("#creationConference").empty();
-                $("#creationConference").append(data);
+                $("#listeRegions").empty();
+                $("#AfficherRegions").empty();
+                $("#AfficherRegions").append(data);
             },
             error:function()
             {
-                alert('Erreur: Creation conference')
+                alert('Erreur: Afficher les regions')
             }
         }
     )
 }
-
-function insertionConference()
-{
-    var tabTechno = Array();
-    var tabTechnoUtil = Array();
-    $('input[type=checkbox]').each
-    (
-        function()
-        {
-            tabTechno.push($(this).val());
-            tabTechnoUtil.push($(this).is(":checked"));
-        }
-    );
-    $.ajax
-    (
-        {
-            url:"index.php/Welcome/InsertionConference",
-            type:'get',
-            data:'tab1='+tabTechno+"&tab2="+tabTechnoUtil+"&num="+$("#num").val()+"&titre="+$("#titre").val()+"&contenu="+$("#contenu").val()+"&niveau="+$("#niv").val()+"&theme="+$("#theme").val(),
-            success:function(data)
-            {
-                alert("Conférence créée");
-                $("#listeConference").empty();
-                $("#creationConference").empty();
-                $("#creationConference").append(data);
-            },
-            error:function()
-            {
-                alert("Erreur : Insertion conference");
-            }
-        }
-    );
-}
-
-function VoterConference()
+function NoterRegions()
 {
     $.ajax
     (
         {
             type:"get",
-            url:"index.php/Welcome/ListeConference",
+            url:"index.php/Welcome/ListeRegions",
             success:function(data)
             {
-                $("#creationConference").empty();
-                $("#listeConference").empty();
-                $("#listeConference").append(data);
+                $("#listeRegions").empty();
+                $("#listeRegions").append(data);
             },
             error:function()
             {
-                alert('Erreur: Creation conference')
+                alert('Erreur: Récuperation Regions')
             }
         }
     )
 }
 
-function AjouterVote()
+function AjouterNote()
 {
-    var tabConference = Array();
-    var tabConferenceVote = Array();
+    var tabRegions = Array();
+    var tabNoteRegions = Array();
     $('input[type=checkbox]').each
     (
         function()
         {
-            tabConference.push($(this).val());
-            tabConferenceVote.push($(this).is(":checked"));
+            tabRegions.push($(this).val());
+            tabNoteRegions.push($(this).is(":checked"));
         }
     );
     $.ajax
@@ -90,17 +55,17 @@ function AjouterVote()
         {
             url:"index.php/Welcome/AddVote",
             type:'get',
-            data:'tab1='+tabConference+"&tab2="+tabConferenceVote,
+            data:'tab1='+tabRegions+"&tab2="+tabNoteRegions,
             success:function(data)
             {
-                alert("Votes mis à jour");
-                $("#creationConference").empty();
-                $("#listeConference").empty();
-                $("#listeConference").append(data);
+                alert("Note mise à jour");
+                $("#AfficherRegions").empty();
+                $("#listeRegions").empty();
+                $("#listeRegions").append(data);
             },
             error:function()
             {
-                alert("Erreur : Insertion conference");
+                alert("Erreur : Ajout Note");
             }
         }
     );
