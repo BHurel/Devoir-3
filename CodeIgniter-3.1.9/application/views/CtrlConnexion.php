@@ -10,11 +10,11 @@
 	<script>
 		$
 		(
-			function()
+			function ()
 			{
 				$("#connexion").click(function()
 				{
-					AfficherRegions();
+					Connexion();
 				});
 				;
 			}

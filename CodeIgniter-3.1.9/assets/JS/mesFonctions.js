@@ -1,3 +1,9 @@
+//function Connexion()
+// {
+//     $.ajax(
+
+//     )
+// }
 function AfficherRegions()
 {
     $.ajax
